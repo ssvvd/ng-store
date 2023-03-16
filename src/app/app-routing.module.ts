@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from "./home/components/home/home.component"
+import {AdminComponent} from "./admin/admin/admin.component"
 
 const routes: Routes = [
-  {path:"",component:HomeComponent,pathMatch: "full"}
+  {path:"",component:HomeComponent,pathMatch: "full"},
+  {path:"admin",component:AdminComponent}
 ];
 
 @NgModule({

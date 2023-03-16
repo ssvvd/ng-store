@@ -1,12 +1,24 @@
-<div class="home">
+<!-- <div class="home" >
   <div class="home__banner">
-
   </div>
-  <div class="home_product">
-      product
+  <div  *ngIf="products" class="home__products">
+    <div class="home__products" *ngFor="let product of products" >
+      <div class="home__product" >
+        <app-card [product]="product">
+        </app-card>
+      </div>
+    </div>
   </div>
 </div>
-
+ -->
+ <div class="home">
+  <div class="home__banner"></div>
+  <div class="home__products" *ngIf="products.length">
+    <div class="home__product" *ngFor="let product of products">
+      <app-card [product]="product"> </app-card>
+    </div>
+  </div>
+</div>
 
 
 
