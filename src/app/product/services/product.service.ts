@@ -13,4 +13,9 @@ export class ProductService {
 
   public getProducts$(): Observable<IProduct[]>
   { return this.http.get<IProduct[]>(Routes["allProducts"]);}
+
+  public singleProduct$(id:string): Observable<IProduct>
+   { return this.http.get<IProduct>(Routes["singleProduct"](id));}
+  //{ return this.http.get<IProduct>("https://fakestoreapi.com/products/" + id);}
+
 }

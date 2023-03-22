@@ -3,6 +3,7 @@ import {AdminService} from '../admin.service';
 import { IProduct } from 'src/app/shared/models';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -18,15 +19,13 @@ export class AdminComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   dataSource;
-  constructor(private srv:AdminService) { }
+  constructor(private srv:AdminService,private router: Router) { }
 
   ngOnInit(): void {
     this.srv.getProducts$().subscribe(data=>{
       console.log(data);
-       //this. displayedColumns=Object.keys(data);
        this. displayedColumns.push ('edit');
        this.products=data;
-       //this.dataSource= this.products;
        this.dataSource = new MatTableDataSource(this.products);
        if(this.paginator) this.dataSource.paginator = this.paginator;
     });
@@ -36,10 +35,12 @@ export class AdminComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  onClickRow(row)
+
+  edit(id)
   {
-     alert(row);
+    this.router.navigateByUrl ('/admin/edit/' + id);
   }
+
   private initTable(data:IProduct[]):void
   {
 

@@ -8,8 +8,8 @@ import { ProductformComponent } from './componenets/productform/productform.comp
   declarations: [CardComponent, ProductformComponent],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
   ],
-  exports:[CardComponent]
+  exports:[CardComponent,ProductformComponent]
 })
 export class SharedModule { }

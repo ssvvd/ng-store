@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { IProduct } from 'src/app/shared/models';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-productform',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductformComponent implements OnInit {
 
   constructor() { }
-
+  @Input () product:IProduct;
   ngOnInit(): void {
   }
 

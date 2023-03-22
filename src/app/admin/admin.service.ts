@@ -13,4 +13,6 @@ export class AdminService {
 
   public getProducts$(): Observable<IProduct[]>
   { return this.http.get<IProduct[]>(Routes["allProducts"]);}
+
+
 }

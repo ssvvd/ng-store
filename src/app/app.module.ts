@@ -9,22 +9,21 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin/admin.component';
-
+import {AdminModule} from "./admin/admin/admin.module"
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    AdminComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     HomeModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
 
   providers: [],

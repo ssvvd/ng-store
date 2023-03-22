@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IProduct } from 'src/app/shared/models';
+import {ProductService} from 'src/app/product/services/product.service'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-editproduct',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditproductComponent implements OnInit {
 
-  constructor() { }
+ // @Input() id:number;
 
+ product:IProduct;
+
+  constructor(private srv:ProductService,private route: ActivatedRoute) { }
   ngOnInit(): void {
-  }
 
+    let id = this.route.snapshot.paramMap.get('id');
+    this.srv.singleProduct$(id).subscribe(data=>{
+      this.product = data;
+      console.log(data);
+    })
+
+  }
 }
