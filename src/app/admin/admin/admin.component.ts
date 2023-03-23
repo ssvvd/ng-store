@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
 
   displayedColumns: string[] = ['id','image', 'description', 'price'];
   public products:IProduct[];
+  //public products1:IProduct1[];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   dataSource;
@@ -25,6 +26,7 @@ export class AdminComponent implements OnInit {
     this.srv.getProducts$().subscribe(data=>{
       console.log(data);
        this. displayedColumns.push ('edit');
+       //this.products=data;
        this.products=data;
        this.dataSource = new MatTableDataSource(this.products);
        if(this.paginator) this.dataSource.paginator = this.paginator;

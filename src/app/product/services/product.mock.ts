@@ -9,7 +9,7 @@ export const PRODUCTS_MOCK:IProduct[]=[
   'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
   category: "men's clothing",
 
-  image: "",
+  image: null,
   rating: {
   rate: 3.9,
   count: 120,
@@ -36,8 +36,7 @@ export const PRODUCTS_MOCK:IProduct[]=[
   description:
   'great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.',
   category: "men's clothing",
-
-  image: "",
+  image: null,
   rating: {
   rate: 4.7,
   count: 500,

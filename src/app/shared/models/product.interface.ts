@@ -5,9 +5,11 @@ export interface IProduct
   price:number;
   description:string;
   category:string;
-  image:string;
+  image:string,
+  //images:Array<string>;
   rating:IRating;
 }
+
 export interface IRating{
   rate:number;
   count:number;

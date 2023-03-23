@@ -36,7 +36,7 @@
       <img title="Edit" style="height:50px;" src="/assets/threedot.png">
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="edit(element.id)" [routerLink]="['/admin/edit/1',element.id]"
+      <button mat-menu-item (click)="edit(element.id)" [routerLink]="['/admin/edit/',element.id]"
       routerLinkActive="active">Edit</button>
       <button mat-menu-item>View</button>
       <button mat-menu-item>Delete</button>

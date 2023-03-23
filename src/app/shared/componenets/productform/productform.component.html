@@ -1,10 +1,24 @@
-<p>productform works!</p>
-<div>id</div><div>{{product.id}}</div>
-<div>{{product.title}}</div>
-<div>{{product.price}}</div>
 
-<div>{{product.image}}</div>
-<div>{{product.rating.rate}}</div>
+<div  class="title">Description</div>
+<mat-form-field appearance="fill">
+  <mat-label></mat-label>
+  <input matInput [(ngModel)]="product.description">
+</mat-form-field>
+
+<div class="title">Price</div>
+<mat-form-field appearance="fill" floatLabel="always">
+  <mat-label></mat-label>
+  <input matInput type="number" class="example-right-align" placeholder="0" [(ngModel)]="product.price">
+  <span matTextPrefix>$&nbsp;</span>
+  <span matTextSuffix>.00</span>
+</mat-form-field>
+
+<div  class="title">Rate</div>
+<mat-form-field appearance="fill" floatLabel="always">
+  <mat-label></mat-label>
+  <input matInput type="number" class="example-right-align" placeholder="0"  [(ngModel)]="product.rating.rate">
+</mat-form-field>
+
 
 <!-- <mat-form-field appearance="fill">
   <mat-label>Input</mat-label>

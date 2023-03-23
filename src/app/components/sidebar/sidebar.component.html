@@ -1,0 +1,12 @@
+
+<div class="sidebar" [ngClass]="{'sidebar--open':isOpen}">
+  sidebar
+  <div class="slidebar_inner">
+    <div><button (click)="goToAdmin()">Home</button></div>
+    <div><button [routerLink]="['/admin/edit/2']">Admin</button></div>
+    <div><button (click)="Exit()">Exit</button></div>
+  </div>
+</div>
+<div class="backdrop" (click)="closesidebar()" [ngClass]="{'backdrop--open':isOpen}">
+
+</div>

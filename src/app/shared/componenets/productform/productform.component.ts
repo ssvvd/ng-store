@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { IProduct } from 'src/app/shared/models';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @Component({
   selector: 'app-productform',
@@ -11,7 +11,9 @@ export class ProductformComponent implements OnInit {
 
   constructor() { }
   @Input () product:IProduct;
+  description:string;
   ngOnInit(): void {
+    this.description ="dasdadadasdasd";
   }
 
 }
