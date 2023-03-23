@@ -4,6 +4,9 @@ import { IProduct } from 'src/app/shared/models';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {Router} from '@angular/router';
+import {ProductService} from 'src/app/product/services/product.service'
+import {MatDialog} from '@angular/material/dialog';
+import {ProductformComponent} from "src/app/shared/componenets/productform/productform.component";
 
 @Component({
   selector: 'app-admin',
@@ -20,17 +23,21 @@ export class AdminComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   dataSource;
-  constructor(private srv:AdminService,private router: Router) { }
+  constructor(public dialog: MatDialog,private srv:AdminService,private router: Router,private srv_prod:ProductService) { }
 
   ngOnInit(): void {
-    this.srv.getProducts$().subscribe(data=>{
+
+    this.srv_prod.getProducts$().subscribe(data=>{
+
+
       console.log(data);
        this. displayedColumns.push ('edit');
-       //this.products=data;
        this.products=data;
        this.dataSource = new MatTableDataSource(this.products);
        if(this.paginator) this.dataSource.paginator = this.paginator;
+
     });
+    this.srv_prod.fetchproducts();
   }
 
   applyFilter(event: Event) {
@@ -41,6 +48,14 @@ export class AdminComponent implements OnInit {
   edit(id)
   {
     this.router.navigateByUrl ('/admin/edit/' + id);
+  }
+
+  openNew() {
+    const dialogRef = this.dialog.open(ProductformComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   private initTable(data:IProduct[]):void

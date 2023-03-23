@@ -26,6 +26,7 @@ export class SidebarComponent implements OnInit {
 
   public Exit()
   {
-    this.onCloseSidebar.emit();
+    //this.onCloseSidebar.emit();
+    this.isOpen=false;
   }
 }
