@@ -10,13 +10,16 @@ import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin/admin.component';
 import {AdminModule} from "./admin/admin/admin.module";
-import { SidebarComponent } from './components/sidebar/sidebar.component'
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LoginComponent } from './components/login/login.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component'
     HomeModule,
     MaterialModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   providers: [],

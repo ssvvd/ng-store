@@ -5,6 +5,7 @@
     <div><button (click)="goToAdmin()">Home</button></div>
     <div><button [routerLink]="['/admin/edit/2']">Admin</button></div>
     <div><button (click)="Exit()">Exit</button></div>
+    <button (click)="Login()" color=""  mat-raised-button>Login</button>
   </div>
 </div>
 <div class="backdrop" (click)="closesidebar()" [ngClass]="{'backdrop--open':isOpen}">

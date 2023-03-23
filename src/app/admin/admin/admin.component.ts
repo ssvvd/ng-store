@@ -7,7 +7,6 @@ import {Router} from '@angular/router';
 import {ProductService} from 'src/app/product/services/product.service'
 import {MatDialog} from '@angular/material/dialog';
 import {ProductformComponent} from "src/app/shared/componenets/productform/productform.component";
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',

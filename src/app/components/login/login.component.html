@@ -1,0 +1,39 @@
+<p>login works!</p>
+<div class="login">
+  <form #loginform="ngForm" (submit)="onSubmin(loginform)">
+        <div class="login__field">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input id="email" type="email" matInput name="email" ngModel
+                   placeholder="Ex. pat@example.com">
+           <!--  <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error>
+              Please enter a valid email address
+            </mat-error>
+            <mat-error>
+              Email is <strong>required</strong>
+            </mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input id="password" type="password" matInput name="password" ngModel
+                   placeholder="">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Select Role</mat-label>
+            <select matNativeControl required name="role" id="role" ngModel>
+              <option ngModel value="user">User</option>
+              <option ngModel value="admin">Admin</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+
+        <div class="login_actions">
+          <button  color="primary"  mat-raised-button type="submit">Submit</button>
+        </div>
+  </form>
+</div>
