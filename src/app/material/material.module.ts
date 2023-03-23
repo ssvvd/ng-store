@@ -9,7 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 const modules:Array<any>=
 [
@@ -21,7 +21,8 @@ const modules:Array<any>=
   MatFormFieldModule,
   MatInputModule,
   MatPaginatorModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDialogModule
 ]
 @NgModule({
   declarations: [],
